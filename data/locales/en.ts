@@ -41,10 +41,7 @@ const en = {
 
   common: {
     available: "Available",
-    sold: "Sold",
-    year: "Year",
-    dimensions: "Dimensions",
-    medium: "Medium",
+    sold: "Sold"
   },
 };
 

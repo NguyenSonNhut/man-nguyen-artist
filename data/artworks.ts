@@ -1,13 +1,4 @@
-export type ArtworkCategory =
-  | "oil"
-  | "watercolor"
-  | "sketch"
-  | "acrylic"
-  | "charcoal";
-
-export interface Artwork {
-  id: number;
-
+export type Artwork = {
   slug: string;
 
   title: {
@@ -20,7 +11,7 @@ export interface Artwork {
     en: string;
   };
 
-  category: ArtworkCategory;
+  category: "oil" | "watercolor" | "sketch";
 
   medium: {
     vi: string;
@@ -30,20 +21,19 @@ export interface Artwork {
   year: number;
 
   width: number;
-
   height: number;
+
+  available: boolean;
 
   thumbnail: string;
 
-  featured: boolean;
+  image: string;
 
-  available: boolean;
-}
+  featured?: boolean;
+};
 
 export const artworks: Artwork[] = [
   {
-    id: 1,
-
     slug: "sunset-on-the-river",
 
     title: {
@@ -52,8 +42,8 @@ export const artworks: Artwork[] = [
     },
 
     description: {
-      vi: "Khung cảnh hoàng hôn yên bình bên dòng sông miền quê Việt Nam.",
-      en: "A peaceful sunset beside a Vietnamese countryside river.",
+      vi: "Khung cảnh hoàng hôn yên bình trên dòng sông quê.",
+      en: "A peaceful sunset over the countryside river.",
     },
 
     category: "oil",
@@ -63,32 +53,31 @@ export const artworks: Artwork[] = [
       en: "Oil Painting",
     },
 
-    year: 2024,
+    year: 2025,
 
     width: 80,
-
-    height: 120,
-
-    thumbnail: "/images/artworks/sunset-on-the-river-thumb.jpg",
-
-    featured: true,
+    height: 60,
 
     available: true,
+
+    thumbnail: "/images/thumbnails/sunset-on-the-river.webp",
+
+    image: "/images/artworks/sunset-on-the-river.webp",
+
+    featured: true,
   },
 
   {
-    id: 2,
-
     slug: "lotus-pond",
 
     title: {
-      vi: "Ao Sen",
+      vi: "Đầm Sen",
       en: "Lotus Pond",
     },
 
     description: {
-      vi: "Ao sen mùa hạ với gam màu dịu nhẹ.",
-      en: "A summer lotus pond with gentle colors.",
+      vi: "Vẻ đẹp thanh bình của hồ sen Việt Nam.",
+      en: "The peaceful beauty of a Vietnamese lotus pond.",
     },
 
     category: "watercolor",
@@ -98,51 +87,17 @@ export const artworks: Artwork[] = [
       en: "Watercolor",
     },
 
-    year: 2023,
+    year: 2024,
 
     width: 56,
-
-    height: 76,
-
-    thumbnail: "/images/artworks/lotus-pond-thumb.jpg",
-
-    featured: true,
+    height: 38,
 
     available: false,
-  },
 
-  {
-    id: 3,
+    thumbnail: "/images/thumbnails/lotus-pond.webp",
 
-    slug: "old-street",
-
-    title: {
-      vi: "Phố Cổ",
-      en: "Old Street",
-    },
-
-    description: {
-      vi: "Ký họa bút sắt về kiến trúc phố cổ.",
-      en: "Ink sketch of an old town street.",
-    },
-
-    category: "sketch",
-
-    medium: {
-      vi: "Ký họa bút sắt",
-      en: "Ink Sketch",
-    },
-
-    year: 2022,
-
-    width: 42,
-
-    height: 60,
-
-    thumbnail: "/images/artworks/old-street-thumb.jpg",
+    image: "/images/artworks/lotus-pond.webp",
 
     featured: true,
-
-    available: true,
   },
 ];

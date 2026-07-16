@@ -32,11 +32,8 @@ const vi = {
   },
 
   common: {
-    available: "Đang có",
-    sold: "Đã bán",
-    year: "Năm",
-    dimensions: "Kích thước",
-    medium: "Chất liệu",
+  available: "Còn bán",
+  sold: "Đã bán",
   },
 };
 

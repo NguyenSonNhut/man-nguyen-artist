@@ -1,4 +1,6 @@
-import { Locale, dictionaries } from "@/lib/i18n/dictionary";
+import ArtworkCard from "@/components/gallery/ArtworkCard";
+import { artworks } from "@/data/artworks";
+import { Locale } from "@/lib/i18n/dictionary";
 
 type Props = {
   params: Promise<{
@@ -8,15 +10,26 @@ type Props = {
 
 export default async function GalleryPage({ params }: Props) {
   const { locale } = await params;
-  const t = dictionaries[locale].gallery;
 
   return (
-    <main className="mx-auto min-h-screen max-w-7xl px-8 py-24">
-      <h1 className="text-5xl font-bold">{t.title}</h1>
+    <main className="mx-auto max-w-7xl px-8 py-20">
 
-      <p className="mt-6 text-lg text-stone-600">
-        {t.description}
-      </p>
+      <h1 className="mb-12 text-5xl font-bold">
+        Gallery
+      </h1>
+
+      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+
+        {artworks.map((artwork) => (
+          <ArtworkCard
+            key={artwork.slug}
+            artwork={artwork}
+            locale={locale}
+          />
+        ))}
+
+      </div>
+
     </main>
   );
 }
