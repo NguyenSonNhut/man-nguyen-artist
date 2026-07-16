@@ -3,7 +3,7 @@ const vi = {
     name: "Mẫn Nguyễn",
     subtitle: "Fine Art",
   },
-  
+
   navbar: {
     gallery: "Tác phẩm",
     artist: "Họa sĩ",
@@ -31,8 +31,26 @@ const vi = {
   },
 
   gallery: {
-    title: "Bộ sưu tập",
-    description: "Khám phá những tác phẩm tiêu biểu.",
+    title: "Tác phẩm",
+
+    description: "Khám phá bộ sưu tập tranh của họa sĩ Mẫn Nguyễn.",
+
+    category: "Thể loại",
+
+    medium: "Chất liệu",
+
+    year: "Năm",
+
+    size: "Kích thước",
+
+    status: "Tình trạng",
+
+    available: "Còn bán",
+
+    sold: "Đã bán",
+
+    copyright:
+      "Mọi hình ảnh đều thuộc bản quyền của Mẫn Nguyễn Artist. Nghiêm cấm sao chép, tải xuống hoặc sử dụng cho mục đích thương mại khi chưa được cho phép.",
   },
 
   artist: {

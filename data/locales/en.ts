@@ -3,7 +3,7 @@ const en = {
     name: "Man Nguyen",
     subtitle: "Fine Art",
   },
-  
+
   navbar: {
     gallery: "Gallery",
     artist: "Artist",
@@ -37,7 +37,25 @@ const en = {
 
   gallery: {
     title: "Gallery",
-    description: "Explore selected artworks.",
+
+    description: "Explore the complete collection of artworks by Man Nguyen.",
+
+    category: "Category",
+
+    medium: "Medium",
+
+    year: "Year",
+
+    size: "Size",
+
+    status: "Status",
+
+    available: "Available",
+
+    sold: "Sold",
+
+    copyright:
+      "All artworks are protected by copyright. Unauthorized reproduction or commercial use is prohibited.",
   },
 
   artist: {

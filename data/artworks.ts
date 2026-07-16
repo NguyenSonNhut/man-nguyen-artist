@@ -34,16 +34,16 @@ export type Artwork = {
 
 export const artworks: Artwork[] = [
   {
-    slug: "sunset-on-the-river",
+    slug: "the-girl-and-the-goat",
 
     title: {
-      vi: "Hoàng hôn trên sông",
-      en: "Sunset on the River",
+      vi: "Cô gái và con dê",
+      en: "The Girl and the Goat",
     },
 
     description: {
-      vi: "Khung cảnh hoàng hôn yên bình trên dòng sông quê.",
-      en: "A peaceful sunset over the countryside river.",
+      vi: "Một cô gái trẻ đang chơi đùa với con dê trong một đêm trăng.",
+      en: "A young girl playing with a goat under the moonlight.",
     },
 
     category: "oil",
@@ -53,31 +53,31 @@ export const artworks: Artwork[] = [
       en: "Oil Painting",
     },
 
-    year: 2025,
+    year: 2000,
 
     width: 80,
     height: 60,
 
     available: true,
 
-    thumbnail: "/images/thumbnails/sunset-on-the-river.webp",
+    thumbnail: "/images/thumbnails/the-girl-and-the-goat.webp",
 
-    image: "/images/artworks/sunset-on-the-river.webp",
+    image: "/images/artworks/the-girl-and-the-goat.webp",
 
     featured: true,
   },
 
   {
-    slug: "lotus-pond",
+    slug: "binh-hung-binh-chanh",
 
     title: {
-      vi: "Đầm Sen",
-      en: "Lotus Pond",
+      vi: "Bình Hưng - Bình Chánh",
+      en: "Binh Hung - Binh Chanh",
     },
 
     description: {
-      vi: "Vẻ đẹp thanh bình của hồ sen Việt Nam.",
-      en: "The peaceful beauty of a Vietnamese lotus pond.",
+      vi: "Vẻ đẹp thanh bình của khu vực Bình Hưng - Bình Chánh.",
+      en: "The peaceful beauty of the Binh Hung - Binh Chanh area.",
     },
 
     category: "watercolor",
@@ -94,9 +94,109 @@ export const artworks: Artwork[] = [
 
     available: false,
 
-    thumbnail: "/images/thumbnails/lotus-pond.webp",
+    thumbnail: "/images/thumbnails/binh-hung-binh-chanh.webp",
 
-    image: "/images/artworks/lotus-pond.webp",
+    image: "/images/artworks/binh-hung-binh-chanh.webp",
+
+    featured: true,
+  },
+  {
+    slug: "hon-son-kien-giang",
+
+    title: {
+      vi: "Hòn Sơn - Kiên Giang",
+      en: "Hon Son - Kien Giang",
+    },
+
+    description: {
+      vi: "Khung cảnh biển tuyệt đẹp tại Hòn Sơn, Kiên Giang.",
+      en: "Beautiful coastal scenery at Hon Son, Kien Giang.",
+    },
+
+    category: "watercolor",
+
+    medium: {
+      vi: "Màu nước",
+      en: "Watercolor",
+    },
+
+    year: 2025,
+
+    width: 80,
+    height: 60,
+
+    available: true,
+
+    thumbnail: "/images/thumbnails/hon-son-kien-giang.webp",
+
+    image: "/images/artworks/hon-son-kien-giang.webp",
+
+    featured: true,
+  },
+
+  {
+    slug: "tan-the",
+
+    title: {
+      vi: "Tận Thế",
+      en: "End of the World",
+    },
+
+    description: {
+      vi: "Một bức tranh thể hiện sự hủy diệt và tận thế.",
+      en: "A painting depicting destruction and the end of the world.",
+    },
+
+    category: "oil",
+
+    medium: {
+      vi: "Sơn dầu",
+      en: "Oil Painting",
+    },
+
+    year: 2024,
+
+    width: 56,
+    height: 38,
+
+    available: false,
+
+    thumbnail: "/images/thumbnails/tan-the.webp",
+
+    image: "/images/artworks/tan-the.webp",
+
+    featured: true,
+  },
+  {
+    slug: "tinh-nguoi-covid",
+
+    title: {
+      vi: "Tình người trong đại dịch Covid-19",
+      en: "Human Connection in the Covid-19 Pandemic",
+    },
+
+    description: {
+      vi: "Một bức tranh thể hiện sự đoàn kết và tình người trong đại dịch Covid-19.",
+      en: "A painting depicting unity and human connection during the Covid-19 pandemic.",
+    },
+
+    category: "oil",
+
+    medium: {
+      vi: "Sơn dầu",
+      en: "Oil Painting",
+    },
+
+    year: 2025,
+
+    width: 80,
+    height: 60,
+
+    available: true,
+
+    thumbnail: "/images/thumbnails/tinh-nguoi-covid.webp",
+
+    image: "/images/artworks/tinh-nguoi-covid.webp",
 
     featured: true,
   },

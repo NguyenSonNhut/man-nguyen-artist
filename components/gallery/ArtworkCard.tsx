@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Artwork } from "@/data/artworks";
-import { Locale } from "@/lib/i18n/dictionary";
+import { Locale, dictionaries } from "@/lib/i18n/dictionary";
 
 type ArtworkCardProps = {
   artwork: Artwork;
@@ -13,19 +13,20 @@ export default function ArtworkCard({
   artwork,
   locale,
 }: ArtworkCardProps) {
+  const t = dictionaries[locale].gallery;
+
   return (
     <Link
       href={`/${locale}/gallery/${artwork.slug}`}
       className="group block overflow-hidden rounded-2xl bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
     >
       <div className="relative aspect-square overflow-hidden">
-
         <Image
           src={artwork.thumbnail}
           alt={artwork.title[locale]}
           fill
           draggable={false}
-          className="select-none object-cover transition duration-500 group-hover:scale-105"
+          className="object-cover transition duration-500 group-hover:scale-105"
         />
 
         <div
@@ -35,19 +36,11 @@ export default function ArtworkCard({
               : "bg-red-100 text-red-700"
           }`}
         >
-          {artwork.available
-            ? locale === "vi"
-              ? "Còn bán"
-              : "Available"
-            : locale === "vi"
-            ? "Đã bán"
-            : "Sold"}
+          {artwork.available ? t.available : t.sold}
         </div>
-
       </div>
 
       <div className="space-y-2 p-5">
-
         <h3 className="text-xl font-semibold text-stone-900 transition group-hover:text-amber-700">
           {artwork.title[locale]}
         </h3>
@@ -57,15 +50,12 @@ export default function ArtworkCard({
         </p>
 
         <div className="flex items-center justify-between text-sm text-stone-400">
-
           <span>{artwork.year}</span>
 
           <span>
             {artwork.width} × {artwork.height} cm
           </span>
-
         </div>
-
       </div>
     </Link>
   );

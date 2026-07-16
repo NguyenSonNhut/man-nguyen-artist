@@ -17,9 +17,9 @@ export const metadata: Metadata = {
 
     icons: {
 
-        icon: "/favicon.ico",
+        icon: "/logo-favicon.ico",
 
-        apple: "/apple-icon.png",
+        apple: "/logo-favicon.png",
 
     },
 
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
         images: [
 
-            "/images/seo/og-image.webp",
+            "/images/seo/logo-favicon.webp",
 
         ],
 

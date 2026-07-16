@@ -2,7 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { artworks } from "@/data/artworks";
-import { Locale } from "@/lib/i18n/dictionary";
+import { Locale, dictionaries } from "@/lib/i18n/dictionary";
 
 type Props = {
   params: Promise<{
@@ -11,26 +11,21 @@ type Props = {
   }>;
 };
 
-export default async function ArtworkDetail({
-  params,
-}: Props) {
+export default async function ArtworkDetail({ params }: Props) {
   const { locale, slug } = await params;
 
-  const artwork = artworks.find(
-    (item) => item.slug === slug
-  );
+  const artwork = artworks.find((item) => item.slug === slug);
 
   if (!artwork) {
     notFound();
   }
 
+  const t = dictionaries[locale].gallery;
+
   return (
     <main className="mx-auto max-w-7xl px-8 py-20">
-
       <div className="grid gap-16 lg:grid-cols-2">
-
         <div className="overflow-hidden rounded-2xl">
-
           <Image
             src={artwork.image}
             alt={artwork.title[locale]}
@@ -38,11 +33,9 @@ export default async function ArtworkDetail({
             height={1200}
             className="w-full rounded-2xl object-cover"
           />
-
         </div>
 
         <div>
-
           <h1 className="text-5xl font-bold">
             {artwork.title[locale]}
           </h1>
@@ -52,58 +45,39 @@ export default async function ArtworkDetail({
           </p>
 
           <div className="mt-10 space-y-4">
-
             <p>
-              <strong>Category:</strong>{" "}
-              {artwork.category}
+              <strong>{t.category}:</strong> {artwork.category}
             </p>
 
             <p>
-              <strong>Medium:</strong>{" "}
-              {artwork.medium[locale]}
+              <strong>{t.medium}:</strong> {artwork.medium[locale]}
             </p>
 
             <p>
-              <strong>Year:</strong>{" "}
-              {artwork.year}
+              <strong>{t.year}:</strong> {artwork.year}
             </p>
 
             <p>
-              <strong>Size:</strong>{" "}
+              <strong>{t.size}:</strong>{" "}
               {artwork.width} × {artwork.height} cm
             </p>
 
             <p>
-              <strong>Status:</strong>{" "}
-              {artwork.available
-                ? locale === "vi"
-                  ? "Còn bán"
-                  : "Available"
-                : locale === "vi"
-                ? "Đã bán"
-                : "Sold"}
+              <strong>{t.status}:</strong>{" "}
+              {artwork.available ? t.available : t.sold}
             </p>
-
           </div>
 
           <div className="mt-12 rounded-xl bg-stone-100 p-6 text-stone-600">
-
             © Mẫn Nguyễn Artist
 
             <br />
-
-            Images are protected by copyright.
-
             <br />
 
-            Unauthorized reproduction or commercial use is prohibited.
-
+            {t.copyright}
           </div>
-
         </div>
-
       </div>
-
     </main>
   );
 }
