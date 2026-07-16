@@ -1,11 +1,12 @@
 const en = {
+  brand: {
+    name: "Man Nguyen",
+    subtitle: "Fine Art",
+  },
+  
   navbar: {
-    home: "Home",
-
     gallery: "Gallery",
-
     artist: "Artist",
-
     contact: "Contact",
   },
 
@@ -22,6 +23,16 @@ const en = {
     galleryButton: "Explore Gallery",
 
     aboutButton: "About Artist",
+  },
+
+  home: {
+    featuredGallery: "Featured Artworks",
+
+    aboutArtist: "About the Artist",
+
+    viewAll: "View All",
+
+    learnMore: "Learn More",
   },
 
   gallery: {
@@ -41,7 +52,7 @@ const en = {
 
   common: {
     available: "Available",
-    sold: "Sold"
+    sold: "Sold",
   },
 };
 

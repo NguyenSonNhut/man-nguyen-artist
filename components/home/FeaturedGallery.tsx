@@ -1,19 +1,57 @@
-import { Locale } from "@/lib/i18n/dictionary";
+import Link from "next/link";
+
+import ArtworkCard from "@/components/gallery/ArtworkCard";
+
+import { artworks } from "@/data/artworks";
+
+import {
+  Locale,
+  dictionaries,
+} from "@/lib/i18n/dictionary";
 
 type Props = {
   locale: Locale;
 };
 
-export default function FeaturedGallery({ locale }: Props) {
-  return (
-    <section className="mx-auto max-w-7xl px-8 py-28">
-      <h2 className="mb-8 text-4xl font-bold">
-        Featured Gallery ({locale})
-      </h2>
+export default function FeaturedGallery({
+  locale,
+}: Props) {
+  const t = dictionaries[locale].home;
 
-      <p className="text-stone-500">
-        Coming soon...
-      </p>
+  const featured = artworks.filter(
+    (artwork) => artwork.featured
+  );
+
+  return (
+    <section className="mx-auto max-w-7xl px-8 py-24">
+
+      <div className="mb-12 flex items-center justify-between">
+
+        <h2 className="text-4xl font-bold">
+          {t.featuredGallery}
+        </h2>
+
+        <Link
+          href={`/${locale}/gallery`}
+          className="font-medium text-amber-700 transition hover:text-amber-900"
+        >
+          {t.viewAll}
+        </Link>
+
+      </div>
+
+      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+
+        {featured.map((artwork) => (
+          <ArtworkCard
+            key={artwork.slug}
+            artwork={artwork}
+            locale={locale}
+          />
+        ))}
+
+      </div>
+
     </section>
   );
 }

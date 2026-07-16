@@ -1,6 +1,10 @@
 const vi = {
+  brand: {
+    name: "Mẫn Nguyễn",
+    subtitle: "Fine Art",
+  },
+  
   navbar: {
-    home: "Trang chủ",
     gallery: "Tác phẩm",
     artist: "Họa sĩ",
     contact: "Liên hệ",
@@ -14,6 +18,16 @@ const vi = {
       "Lưu giữ những khoảnh khắc đẹp bằng tranh sơn dầu, tranh màu nước, ký họa phong cảnh và chân dung.",
     galleryButton: "Xem tác phẩm",
     aboutButton: "Giới thiệu họa sĩ",
+  },
+
+  home: {
+    featuredGallery: "Tác phẩm nổi bật",
+
+    aboutArtist: "Về họa sĩ",
+
+    viewAll: "Xem tất cả",
+
+    learnMore: "Tìm hiểu thêm",
   },
 
   gallery: {
@@ -32,8 +46,8 @@ const vi = {
   },
 
   common: {
-  available: "Còn bán",
-  sold: "Đã bán",
+    available: "Còn bán",
+    sold: "Đã bán",
   },
 };
 

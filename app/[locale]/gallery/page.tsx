@@ -1,6 +1,13 @@
 import ArtworkCard from "@/components/gallery/ArtworkCard";
 import { artworks } from "@/data/artworks";
 import { Locale } from "@/lib/i18n/dictionary";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+
+    title: "Gallery",
+
+};
 
 type Props = {
   params: Promise<{

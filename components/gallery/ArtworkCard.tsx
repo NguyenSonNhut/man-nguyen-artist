@@ -25,7 +25,6 @@ export default function ArtworkCard({
           alt={artwork.title[locale]}
           fill
           draggable={false}
-          onContextMenu={(e) => e.preventDefault()}
           className="select-none object-cover transition duration-500 group-hover:scale-105"
         />
 
