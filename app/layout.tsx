@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+    metadataBase: new URL("http://localhost:3000"),
 
     title: {
 
@@ -17,9 +18,9 @@ export const metadata: Metadata = {
 
     icons: {
 
-        icon: "/logo-favicon.ico",
+        icon: "/images/logo/logo-favicon.ico",
 
-        apple: "/logo-favicon.png",
+        apple: "/images/logo/logo-favicon.png",
 
     },
 

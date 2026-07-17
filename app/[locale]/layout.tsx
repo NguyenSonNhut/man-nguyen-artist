@@ -15,6 +15,7 @@ export default async function LocaleLayout({
   params,
 }: Props) {
   const { locale } = await params;
+  console.log(locale);
 
   return (
     <>
