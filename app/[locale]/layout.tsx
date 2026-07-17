@@ -6,7 +6,7 @@ import { Locale } from "@/lib/i18n/dictionary";
 type Props = {
   children: ReactNode;
   params: Promise<{
-    locale: Locale;
+    locale: string;
   }>;
 };
 
@@ -15,15 +15,16 @@ export default async function LocaleLayout({
   params,
 }: Props) {
   const { locale } = await params;
-  console.log(locale);
+
+  const currentLocale = locale as Locale;
 
   return (
     <>
-      <Navbar locale={locale} />
+      <Navbar locale={currentLocale} />
 
       {children}
 
-      <Footer locale={locale} />
+      <Footer locale={currentLocale} />
     </>
   );
 }

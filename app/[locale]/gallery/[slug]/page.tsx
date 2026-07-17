@@ -6,7 +6,7 @@ import { Locale, dictionaries } from "@/lib/i18n/dictionary";
 
 type Props = {
   params: Promise<{
-    locale: Locale;
+    locale: string;
     slug: string;
   }>;
 };
@@ -14,13 +14,15 @@ type Props = {
 export default async function ArtworkDetail({ params }: Props) {
   const { locale, slug } = await params;
 
+  const currentLocale = locale as Locale;
+
   const artwork = artworks.find((item) => item.slug === slug);
 
   if (!artwork) {
     notFound();
   }
 
-  const t = dictionaries[locale].gallery;
+  const t = dictionaries[currentLocale].gallery;
 
   return (
     <main className="mx-auto max-w-7xl px-8 py-20">
@@ -28,7 +30,7 @@ export default async function ArtworkDetail({ params }: Props) {
         <div className="overflow-hidden rounded-2xl">
           <Image
             src={artwork.image}
-            alt={artwork.title[locale]}
+            alt={artwork.title[currentLocale]}
             width={900}
             height={1200}
             className="w-full rounded-2xl object-cover"
@@ -37,11 +39,11 @@ export default async function ArtworkDetail({ params }: Props) {
 
         <div>
           <h1 className="text-5xl font-bold">
-            {artwork.title[locale]}
+            {artwork.title[currentLocale]}
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-stone-600">
-            {artwork.description[locale]}
+            {artwork.description[currentLocale]}
           </p>
 
           <div className="mt-10 space-y-4">
@@ -50,7 +52,8 @@ export default async function ArtworkDetail({ params }: Props) {
             </p>
 
             <p>
-              <strong>{t.medium}:</strong> {artwork.medium[locale]}
+              <strong>{t.medium}:</strong>{" "}
+              {artwork.medium[currentLocale]}
             </p>
 
             <p>
@@ -69,7 +72,7 @@ export default async function ArtworkDetail({ params }: Props) {
           </div>
 
           <div className="mt-12 rounded-xl bg-stone-100 p-6 text-stone-600">
-            © Mẫn Nguyễn Artist
+            © Man Nguyen Artist
 
             <br />
             <br />

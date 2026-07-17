@@ -10,14 +10,16 @@ export const metadata: Metadata = {
 
 type Props = {
   params: Promise<{
-    locale: Locale;
+    locale: string;
   }>;
 };
 
 export default async function GalleryPage({ params }: Props) {
   const { locale } = await params;
 
-  const t = dictionaries[locale].gallery;
+  const currentLocale = locale as Locale;
+
+  const t = dictionaries[currentLocale].gallery;
 
   return (
     <main className="mx-auto max-w-7xl px-8 py-20">
@@ -34,7 +36,7 @@ export default async function GalleryPage({ params }: Props) {
           <ArtworkCard
             key={artwork.slug}
             artwork={artwork}
-            locale={locale}
+            locale={currentLocale}
           />
         ))}
       </div>
