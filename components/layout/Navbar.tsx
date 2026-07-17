@@ -40,7 +40,7 @@ export default function Navbar({
 
   return (
     <header className="sticky top-0 z-50 border-b border-stone-200 bg-white/90 backdrop-blur-md">
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
         <Link
           href={`/${locale}`}
           className="flex items-center gap-4"
@@ -64,7 +64,7 @@ export default function Navbar({
           </div>
         </Link>
 
-        <div className="flex items-center gap-12">
+        <div className="hidden items-center gap-10 md:flex">
           <ul className="flex items-center gap-8">
             {navigation.map((item) => (
               <li key={item.href}>

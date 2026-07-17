@@ -25,8 +25,8 @@ export default async function ArtworkDetail({ params }: Props) {
   const t = dictionaries[currentLocale].gallery;
 
   return (
-    <main className="mx-auto max-w-7xl px-8 py-20">
-      <div className="grid gap-16 lg:grid-cols-2">
+    <main className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8">
+      <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="overflow-hidden rounded-2xl">
           <Image
             src={artwork.image}
@@ -38,7 +38,7 @@ export default async function ArtworkDetail({ params }: Props) {
         </div>
 
         <div>
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-3xl lg:text-5xl font-bold">
             {artwork.title[currentLocale]}
           </h1>
 

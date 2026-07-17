@@ -22,16 +22,16 @@ export default async function GalleryPage({ params }: Props) {
   const t = dictionaries[currentLocale].gallery;
 
   return (
-    <main className="mx-auto max-w-7xl px-8 py-20">
-      <h1 className="mb-4 text-5xl font-bold">
+    <main className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <h1 className="mb-4 text-3xl font-bold lg:text-5xl">
         {t.title}
       </h1>
 
-      <p className="mb-14 max-w-2xl text-stone-600">
+      <p className="mb-12 max-w-2xl text-stone-600">
         {t.description}
       </p>
 
-      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {artworks.map((artwork) => (
           <ArtworkCard
             key={artwork.slug}

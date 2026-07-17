@@ -24,9 +24,9 @@ export default function FeaturedGallery({
   );
 
   return (
-    <section className="mx-auto max-w-7xl px-8 py-24">
-      <div className="mb-12 flex items-center justify-between">
-        <h2 className="text-4xl font-bold">
+    <section className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <h2 className="text-3xl font-bold lg:text-4xl">
           {t.featuredGallery}
         </h2>
 
@@ -38,7 +38,7 @@ export default function FeaturedGallery({
         </Link>
       </div>
 
-      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {featured.map((artwork) => (
           <ArtworkCard
             key={artwork.slug}

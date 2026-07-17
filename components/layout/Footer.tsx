@@ -9,7 +9,7 @@ export default function Footer({ locale }: FooterProps) {
 
   return (
     <footer className="border-t border-stone-200 py-10">
-      <div className="mx-auto max-w-7xl px-8 text-center text-sm text-stone-500">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 text-center text-sm text-stone-500">
         © 2026 {t.brand.name} {t.brand.subtitle}
       </div>
     </footer>

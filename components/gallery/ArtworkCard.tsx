@@ -25,13 +25,13 @@ export default function ArtworkCard({
           src={artwork.thumbnail}
           alt={artwork.title[locale]}
           fill
-          sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+          sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
           draggable={false}
           className="object-cover transition duration-500 group-hover:scale-105"
         />
 
         <div
-          className={`absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur ${
+          className={`absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur ${
             artwork.available
               ? "bg-green-100 text-green-700"
               : "bg-red-100 text-red-700"
@@ -41,8 +41,8 @@ export default function ArtworkCard({
         </div>
       </div>
 
-      <div className="space-y-2 p-5">
-        <h3 className="text-xl font-semibold text-stone-900 transition group-hover:text-amber-700">
+      <div className="space-y-2 p-4 sm:p-5">
+        <h3 className="text-lg font-semibold text-stone-900 transition group-hover:text-amber-700 sm:text-xl">
           {artwork.title[locale]}
         </h3>
 
@@ -50,7 +50,7 @@ export default function ArtworkCard({
           {artwork.medium[locale]}
         </p>
 
-        <div className="flex items-center justify-between text-sm text-stone-400">
+        <div className="flex items-center justify-between text-xs text-stone-400 sm:text-sm">
           <span>{artwork.year}</span>
 
           <span>
