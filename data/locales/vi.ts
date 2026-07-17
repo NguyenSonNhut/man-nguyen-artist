@@ -54,13 +54,56 @@ const vi = {
   },
 
   artist: {
-    title: "Họa sĩ",
-    description: "Tiểu sử và hành trình nghệ thuật.",
+    badge: "Họa sĩ",
+
+    title: "Nguyễn Mẫn",
+
+    description:
+      "Nguyễn Mẫn là họa sĩ chuyên sáng tác tranh sơn dầu, màu nước, ký họa và phong cảnh Việt Nam.",
+
+    statementTitle: "Tuyên ngôn nghệ thuật",
+
+    statement:
+      "Mỗi tác phẩm đều là sự kết nối giữa ký ức, ánh sáng và cảm xúc. Qua tranh sơn dầu, màu nước và ký họa, tôi mong muốn lưu giữ vẻ đẹp bình dị của cuộc sống Việt Nam.",
+
+    specialities: [
+      {
+        title: "Sơn dầu",
+        description: "Tranh sơn dầu giàu cảm xúc và màu sắc.",
+      },
+      {
+        title: "Màu nước",
+        description: "Những bức tranh nhẹ nhàng, tinh tế.",
+      },
+      {
+        title: "Ký họa",
+        description: "Chân dung và ký họa bút sắt.",
+      },
+      {
+        title: "Phong cảnh",
+        description: "Phong cảnh và cuộc sống Việt Nam.",
+      },
+    ],
   },
 
   contact: {
     title: "Liên hệ",
-    description: "Kết nối với họa sĩ.",
+
+    description: "Liên hệ để trao đổi về tác phẩm, đặt tranh hoặc hợp tác.",
+
+    information: {
+      email: "Email",
+      phone: "Điện thoại",
+      facebook: "Facebook",
+      instagram: "Instagram",
+    },
+
+    form: {
+      name: "Họ và tên",
+      email: "Email",
+      message: "Nội dung",
+      submit: "Gửi liên hệ",
+    },
   },
 
   common: {
