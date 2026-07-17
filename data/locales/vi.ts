@@ -17,7 +17,7 @@ const vi = {
     description:
       "Lưu giữ những khoảnh khắc đẹp bằng tranh sơn dầu, tranh màu nước, ký họa phong cảnh và chân dung.",
     galleryButton: "Xem tác phẩm",
-    aboutButton: "Giới thiệu họa sĩ",
+    aboutButton: "Giới thiệu về họa sĩ",
   },
 
   home: {
