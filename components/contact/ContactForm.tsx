@@ -8,77 +8,64 @@ type Props = {
   locale: Locale;
 };
 
-export default function ContactForm({
-  locale,
-}: Props) {
-
+export default function ContactForm({ locale }: Props) {
   const t = dictionaries[locale].contact;
 
   const [loading, setLoading] = useState(false);
-
-  const [success, setSuccess] = useState(false);
-
-  const [error, setError] = useState(false);
+  const [status, setStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   async function handleSubmit(
     e: React.FormEvent<HTMLFormElement>
   ) {
-
     e.preventDefault();
 
     setLoading(true);
-    setSuccess(false);
-    setError(false);
+    setStatus("idle");
 
-    const form = new FormData(e.currentTarget);
+    const formElement = e.currentTarget;
 
     const body = {
-      name: form.get("name"),
-      email: form.get("email"),
-      message: form.get("message"),
+      name: (formElement.elements.namedItem("name") as HTMLInputElement).value,
+      email: (formElement.elements.namedItem("email") as HTMLInputElement).value,
+      message: (formElement.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
 
     try {
-
-      const res = await fetch("/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-
         headers: {
           "Content-Type": "application/json",
         },
-
         body: JSON.stringify(body),
       });
 
-      if (!res.ok) throw new Error();
+      const data = await response.json();
 
-      setSuccess(true);
+      if (!response.ok || !data.success) {
+        throw new Error();
+      }
 
-      e.currentTarget.reset();
-
+      setStatus("success");
+      formElement.reset();
     } catch {
-
-      setError(true);
-
+      setStatus("error");
     } finally {
-
       setLoading(false);
-
     }
   }
 
   return (
-
     <form
       onSubmit={handleSubmit}
       className="space-y-5 rounded-3xl border border-stone-200 p-8"
     >
-
       <input
         name="name"
         required
         placeholder={t.form.name}
-        className="w-full rounded-xl border border-stone-300 px-4 py-3 outline-none transition focus:border-stone-900"
+        className="w-full rounded-xl border border-stone-300 px-4 py-3 outline-none focus:border-stone-900"
       />
 
       <input
@@ -86,7 +73,7 @@ export default function ContactForm({
         type="email"
         required
         placeholder={t.form.email}
-        className="w-full rounded-xl border border-stone-300 px-4 py-3 outline-none transition focus:border-stone-900"
+        className="w-full rounded-xl border border-stone-300 px-4 py-3 outline-none focus:border-stone-900"
       />
 
       <textarea
@@ -94,28 +81,28 @@ export default function ContactForm({
         required
         rows={6}
         placeholder={t.form.message}
-        className="w-full rounded-xl border border-stone-300 px-4 py-3 outline-none transition focus:border-stone-900"
+        className="w-full rounded-xl border border-stone-300 px-4 py-3 outline-none focus:border-stone-900"
       />
 
       <button
+        type="submit"
         disabled={loading}
-        className="rounded-xl bg-stone-900 px-8 py-3 text-white transition hover:bg-stone-700 disabled:opacity-60"
+        className="rounded-xl bg-stone-900 px-8 py-3 text-white hover:bg-stone-700 disabled:opacity-60"
       >
         {loading ? "Sending..." : t.form.submit}
       </button>
 
-      {success && (
-        <p className="text-sm text-green-600">
+      {status === "success" && (
+        <p className="text-green-600">
           Message sent successfully.
         </p>
       )}
 
-      {error && (
-        <p className="text-sm text-red-600">
+      {status === "error" && (
+        <p className="text-red-600">
           Something went wrong.
         </p>
       )}
-
     </form>
   );
 }
